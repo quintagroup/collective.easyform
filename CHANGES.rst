@@ -4,6 +4,11 @@ Changelog
 1.0a4 (unreleased)
 ------------------
 
+- Reworked mail address formating, avoiding recipient address in the form of
+  ``name <<account@domain.com>>`` and having instead
+  ``name <account@domain.com>``.
+  [thet]
+
 - Depend on plone.schemaeditor > 2.0 for JS compatibility.
   [thet]
 
