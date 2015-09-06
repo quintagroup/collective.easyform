@@ -1,12 +1,19 @@
 Changelog
 =========
 
+1.0a4 (unreleased)
+------------------
+
+- Depend on plone.schemaeditor > 2.0 for JS compatibility.
+  [thet]
+
+
 1.0a3 (2015-06-02)
 ------------------
 
 - Fixed templates
   [kroman0]
-  
+
 - Fixed field order #17
   [kroman0]
 
@@ -18,19 +25,19 @@ Changelog
 
 - Set script type correctly
   [fredvd]
-  
+
 1.0a2 (2014-06-13)
 ------------------
 
 - Fixed conflict with plone.app.multilingual[dexterity]
   [kroman0]
-  
+
 - Fixed rendering saved data form
   [kroman0]
-  
+
 - Fixed and updated tests
   [kroman0]
-  
+
 - Fix unicode encoding in download csv
   [gborelli]
 
