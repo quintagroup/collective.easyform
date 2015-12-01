@@ -23,6 +23,8 @@ from zope.i18nmessageid import MessageFactory
 from zope.interface import implements
 from zope.schema import ValidationError
 from zope.schema import getFieldsInOrder
+from Products.statusmessages.interfaces import IStatusMessage
+
 
 logger = getLogger('collective.easyform')
 PMF = MessageFactory('plone')
@@ -151,6 +153,7 @@ class EasyFormForm(AutoExtensibleForm, form.Form):
 
     @button.buttonAndHandler(PMF(u'Submit'), name='submit', condition=lambda form: not form.thanksPage)
     def handleSubmit(self, action):
+        messages = IStatusMessage(self.request)
         data, errors = self.extractData()
         if errors:
             self.status = self.formErrorsMessage
@@ -173,6 +176,7 @@ class EasyFormForm(AutoExtensibleForm, form.Form):
                 self.request.response.write(thanksPage)
         else:
             self.thanksPage = True
+            messages.add(_(u'Form successfully submitted'), type=u'success')
             replacer = DollarVarReplacer(data).sub
             self.thanksPrologue = self.context.thanksPrologue and replacer(
                 self.context.thanksPrologue.output)
