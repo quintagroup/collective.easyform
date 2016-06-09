@@ -1,3 +1,10 @@
+NOTE
+====
+
+Development moved to: https://github.com/collective/collective.easyform
+
+
+
 Introduction
 ============
 
