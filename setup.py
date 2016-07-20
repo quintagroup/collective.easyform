@@ -1,7 +1,6 @@
 from setuptools import setup, find_packages
-import os
 
-version = '1.0a3'
+version = '1.0a4.dev0'
 
 setup(name='collective.easyform',
       version=version,
@@ -12,7 +11,10 @@ setup(name='collective.easyform',
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
           "Framework :: Plone",
+          "Framework :: Plone :: 4.3",
+          "Framework :: Plone :: 5.0",
           "Programming Language :: Python",
+          "Programming Language :: Python :: 2.7",
       ],
       keywords='form plone ttw',
       author='Roman Kozlovskyi',
@@ -30,7 +32,7 @@ setup(name='collective.easyform',
           'plone.autoform',
           'plone.dexterity',
           'plone.namedfile',
-          'plone.schemaeditor',
+          'plone.schemaeditor >= 2.0.0',
           'plone.supermodel',
           # -*- Extra requirements: -*-
       ],
