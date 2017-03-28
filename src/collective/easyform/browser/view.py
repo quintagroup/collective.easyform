@@ -265,8 +265,10 @@ class EasyFormForm(AutoExtensibleForm, form.Form):
         self.formMaybeForceSSL()
         super(EasyFormForm, self).update()
         self.template = self.form_template
-        if self.request.method == 'POST' and \
-                not self.context.thanksPageOverride:
+        if (
+            self.request.method == 'POST' and
+            not self.context.thanksPageOverride
+        ):
             data, errors = self.extractData()
             if errors:
                 return
